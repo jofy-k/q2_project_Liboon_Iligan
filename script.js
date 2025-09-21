@@ -9,16 +9,16 @@ let seedLogs = [];
 // ============================
 async function loadConfigAndLogs() {
   try {
-    const response = await fetch("config.json");
+    const response = await fetch("data.json");
     const data = await response.json();
 
     config = data.config || {};
     seedLogs = data.logs || [];
 
-    console.log("Loaded config:", config);
+    console.log("Loaded config:", data);
     console.log("Loaded seed logs:", seedLogs);
   } catch (error) {
-    console.error("Error loading config.json:", error);
+    console.error("Error loading data.json:", error);
   }
 }
 
